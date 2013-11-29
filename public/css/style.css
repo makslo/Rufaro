@@ -85,10 +85,11 @@ li.name a small{
   padding-bottom: 20px;
 }
 
-.blog h1{
-  color:white;
-}
-
 .post_date{
   font-size: 12px;
+}
+
+.blog_div{
+  border-radius: 5px;
+  padding-top:20px;margin-top:15px;background:white;
 }
