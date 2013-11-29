@@ -75,3 +75,20 @@ li.name a small{
   padding:8px;
   color:#909090;
 }
+
+/* BLOG */
+
+.blog{
+  margin:20px;
+  background:rgba(0,0,0,0.6);
+  border-radius: 20px;
+  padding-bottom: 20px;
+}
+
+.blog h1{
+  color:white;
+}
+
+.post_date{
+  font-size: 12px;
+}

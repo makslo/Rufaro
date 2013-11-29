@@ -1,0 +1,144 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Rufaro</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/modernizr.js"></script>
+    <script type="text/javascript" src="http://octonia.tumblr.com/api/read/json">
+    </script>
+  </head>
+  <body>
+    <div class="contain-to-grid fixed">
+       <nav class="top-bar">
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="#">RUFARO<br><small>LETS LOVE RUFARO</small></a></h1>
+            </li>
+          </ul>
+
+          <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="#">THE STORY</a></li>
+              <li><a href="#">GALLERY</a></li>
+              <li><a href="mixes.html">MIXES</a></li>
+              <li><a style="color:red;" href="#">SCENE</a></li>
+              <li><a href="#">STORE</a></li>
+              <li><a href="#">STALK</a></li>
+              <li><a href="#">I FOLLOW</a></li>
+              <li><a href="#">THE TRUTH</a></li>
+            </ul>
+            
+          </section>
+        </nav>
+    </div>
+
+<div class="row">
+  <div class="large-12 columns blog">
+    <h1>BLOG</h1>
+    <div style="padding:10px;margin-top:10px;background:white;">
+            <script type="text/javascript">
+              // The variable "tumblr_api_read" is now set.
+              console.log(tumblr_api_read["posts-total"])
+              for(var i = 0;i<=tumblr_api_read['posts'].length;i++){
+                 if(tumblr_api_read['posts'][i]){
+                // document.write('<div style="padding:10px;margin-top:10px;background:white;">');
+                document.write('<div class="row">');
+                document.write('<div class="large-8 large-offset-2 columns">');
+                if(tumblr_api_read['posts'][i]['type']=="regular"){
+                  document.write('<h3>'+tumblr_api_read['posts'][i]['regular-title']+'</h3>');
+                  document.write(tumblr_api_read['posts'][i]['regular-body']);
+                } else if(tumblr_api_read['posts'][i]['type']=="photo"){
+                  document.write('<img src="'+tumblr_api_read['posts'][i]['photo-url-1280']+'">');
+                  document.write('<p>'+tumblr_api_read['posts'][i]['photo-caption']+'</p>');
+                } else if(tumblr_api_read['posts'][i]['type']=="video"){
+                  document.write(tumblr_api_read['posts'][i]['video-player-500']);
+                  document.write('<p>'+tumblr_api_read['posts'][i][['video-caption']]+'</p>');
+                } else if(tumblr_api_read['posts'][i]['type']=="audio"){
+                  document.write(tumblr_api_read['posts'][i]['audio-embed']);
+                  document.write('<p>'+tumblr_api_read['posts'][i][['audio-caption']]+'</p>');
+                } else if(tumblr_api_read['posts'][i]['type']=="conversation"){
+                  document.write('<h3>'+tumblr_api_read['posts'][i]['conversation-title']+'</h3>');
+                  document.write('<p>'+tumblr_api_read['posts'][i]['conversation-text']+'</p>');
+                } else if(tumblr_api_read['posts'][i]['type']=="quote"){
+                  document.write('<h3>"'+tumblr_api_read['posts'][i]['quote-text']+'"</h3>');
+                  document.write('<p>—'+tumblr_api_read['posts'][i]['quote-source']+'</p>');
+                } else if(tumblr_api_read['posts'][i]['type']=="link"){
+                  document.write('<h3><a href="'+tumblr_api_read['posts'][i]['link-url']+'">'+tumblr_api_read['posts'][i]['link-text']+'</a></h3>');
+                  document.write(tumblr_api_read['posts'][i]['link-description']);
+                } 
+                document.write('</div>');
+                document.write('</div>');
+                document.write('<div class="row">');
+                  document.write('<div class="large-2 large-offset-2 columns">');
+                    document.write('<p class="post_date">'+tumblr_api_read['posts'][i]['date'].split(" ").reduce(function(previousValue, currentValue, index, array){
+                      var data = previousValue;
+                      if (index<4){
+                        data = previousValue +' '+ currentValue;
+                      }
+                      return data;
+                    })+'</p>');
+                  document.write('</div>');
+                  document.write('<div class="large-8 columns">');
+                    document.write('<a href="'+tumblr_api_read['posts'][i]['url-with-slug']+'#disqus_thread">Link</a>');
+                  document.write('</div>');
+                document.write('</div>');
+                document.write('<hr>');
+                // document.write('</div>');
+              }
+              }
+
+          </script>
+              <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'httpoctoniatumblrcom'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+        </div>
+  </div>
+</div>
+
+  <div class="footer">
+    <div class="row">
+      <div class="large-12 columns">
+        <p>&copy; WWW.LOVERUFARO.COM, ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  
+        <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'httpoctoniatumblrcom'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+  </body>
+</html>
