@@ -39,14 +39,22 @@
 
 <div class="row">
   <div class="large-12 columns blog">
-    <h1>BLOG</h1>
+
     <div class="blog_div">
+          <h1>BLOG</h1>
             <script type="text/javascript">
               // The variable "tumblr_api_read" is now set.
-              console.log(tumblr_api_read["posts-total"])
+
               for(var i = 0;i<=tumblr_api_read['posts'].length;i++){
-                 if(tumblr_api_read['posts'][i]){
-                // document.write('<div style="padding:10px;margin-top:10px;background:white;">');
+              if(tumblr_api_read['posts'][i]){
+              document.write('<hr>');
+              document.write('<p class="post_date">'+tumblr_api_read['posts'][i]['date'].split(" ").reduce(function(previousValue, currentValue, index, array){
+                      var data = previousValue;
+                      if (index<4){
+                        data = previousValue +' '+ currentValue;
+                      }
+                      return data;
+                    })+'</p>');
                 document.write('<div class="row">');
                 document.write('<div class="large-8 large-offset-2 columns">');
                 if(tumblr_api_read['posts'][i]['type']=="regular"){
@@ -75,40 +83,18 @@
                 document.write('</div>');
                 document.write('<div class="row">');
                   document.write('<div class="large-2 large-offset-2 columns">');
-                    document.write('<p class="post_date">'+tumblr_api_read['posts'][i]['date'].split(" ").reduce(function(previousValue, currentValue, index, array){
-                      var data = previousValue;
-                      if (index<4){
-                        data = previousValue +' '+ currentValue;
-                      }
-                      return data;
-                    })+'</p>');
+                    document.write('<a href="'+tumblr_api_read['posts'][i]['url']+'">Tumblr Link</a>')
                   document.write('</div>');
                   document.write('<div class="large-8 columns">');
-                    document.write('<a href="'+tumblr_api_read['posts'][i]['url-with-slug']+'#disqus_thread">Link</a>');
+                    document.write('<a id="'+i+'" class="disq_comments" href="'+tumblr_api_read['posts'][i]['url-with-slug']+'#disqus_thread">Comment</a>');
                   document.write('</div>');
                 document.write('</div>');
-                document.write('<hr>');
-                // document.write('</div>');
               }
               }
 
           </script>
-              <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'httpoctoniatumblrcom'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
-        </div>
+    </div>
   </div>
 </div>
 
@@ -127,7 +113,7 @@
       $(document).foundation();
     </script>
   
-        <script type="text/javascript">
+    <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'httpoctoniatumblrcom'; // required: replace example with your forum shortname
 
@@ -135,7 +121,7 @@
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
     </script>
