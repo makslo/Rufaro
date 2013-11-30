@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'BebasNeueRegular';
     src: url('BebasNeue-webfont.eot');
-    src: url('BebasNeue-webfont.woff') format('woff'), url('BebasNeue-webfont.ttf') format('truetype');
+    src: url('BebasNeue-webfont.woff') format('woff'), url('BebasNeue-webfont.ttf') format('truetype'), url('https://sites.google.com/site/directorybesttheme/font/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
     /*src: url('https://sites.google.com/site/directorybesttheme/font/BebasNeue-webfont.eot');*/
    /* src: url('https://sites.google.com/site/directorybesttheme/font/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
          url('https://sites.google.com/site/directorybesttheme/font/BebasNeue-webfont.woff') format('woff'),
