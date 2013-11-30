@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Love Rufaro</title>
     <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/foundation-icons.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/modernizr.js"></script>
     <script type="text/javascript" src="http://octonia.tumblr.com/api/read/json">
@@ -37,6 +38,15 @@
         </nav>
     </div>
 
+<div class="soc_share">
+  <a class="soc_open" href=""><i class="step fi-arrow-right"></i></a>
+  <ul>
+    <li><a href=""><i class="step fi-social-facebook size-72"></i></a></li>
+    <li><a href=""><i class="step fi-social-twitter size-72"></i></a></li>
+  </ul>
+<a class="soc_close" href=""><i class="step fi-arrow-left right"></i></a>
+</div>
+
 <div class="row">
   <div class="large-12 columns blog">
 
@@ -62,10 +72,10 @@
                   document.write(tumblr_api_read['posts'][i]['regular-body']);
                 } else if(tumblr_api_read['posts'][i]['type']=="photo"){
                   document.write('<img src="'+tumblr_api_read['posts'][i]['photo-url-1280']+'">');
-                  document.write('<p>'+tumblr_api_read['posts'][i]['photo-caption']+'</p>');
+                  document.write(tumblr_api_read['posts'][i]['photo-caption']);
                 } else if(tumblr_api_read['posts'][i]['type']=="video"){
                   document.write(tumblr_api_read['posts'][i]['video-player-500']);
-                  document.write('<p>'+tumblr_api_read['posts'][i][['video-caption']]+'</p>');
+                  document.write(tumblr_api_read['posts'][i]['video-caption']);
                 } else if(tumblr_api_read['posts'][i]['type']=="audio"){
                   document.write(tumblr_api_read['posts'][i]['audio-embed']);
                   document.write('<p>'+tumblr_api_read['posts'][i][['audio-caption']]+'</p>');
@@ -81,13 +91,21 @@
                 } 
                 document.write('</div>');
                 document.write('</div>');
+                document.write('</br>');
                 document.write('<div class="row">');
                   document.write('<div class="large-2 large-offset-2 columns">');
                     document.write('<a href="'+tumblr_api_read['posts'][i]['url']+'">Tumblr Link</a>')
                   document.write('</div>');
-                  document.write('<div class="large-8 columns">');
+                  document.write('<div class="large-2 columns">');
                     document.write('<a id="'+i+'" class="disq_comments" href="'+tumblr_api_read['posts'][i]['url-with-slug']+'#disqus_thread">Comment</a>');
                   document.write('</div>');
+                  document.write('<div class="large-2 columns end">');
+                     document.write('<a data-dropdown="drop2-'+i+'"><i class="step fi-share size-72"></i>  Share</a>'+
+                      '<ul id="drop2-'+i+'" class="f-dropdown" data-dropdown-content>'+
+                      '<li><a href="#"><i class="step fi-social-facebook size-72"></i> Facebook</a></li>'+
+                      '<li><a href="#"><i class="step fi-social-twitter size-72"></i> Twitter</a></li>'+
+                      '</ul>');
+                  document.write('</div>')
                 document.write('</div>');
               }
               }

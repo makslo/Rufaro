@@ -85,6 +85,10 @@ li.name a small{
   padding-bottom: 20px;
 }
 
+.blog a{
+  color: #a7adb1;
+}
+
 .post_date{
   font-size: 12px;
 }
@@ -92,4 +96,52 @@ li.name a small{
 .blog_div{
   border-radius: 5px;
   padding:10px;margin-top:15px;background:white;
+}
+.soc_share{
+  top:170px;
+  position: fixed;
+  line-height: 0;
+}
+.soc_share a{
+  color:rgba(80,80,80,0.5);
+}
+
+.soc_share ul{
+  position:relative;
+  background:black;
+  list-style: none;
+  line-height: 0;
+  margin:0;
+}
+.soc_share li{
+  padding:10px;
+  line-height: 0;
+}
+
+.soc_share ul i{
+  color:white;
+  font-size:40px;
+}
+
+ul.f-dropdown{
+  width:auto !important;
+}
+
+ul.f-dropdown li{
+  padding:0px;
+  margin:0px;
+}
+
+ul.f-dropdown i{
+  vertical-align: middle;
+font-size: 40px;
+}
+
+ul.f-dropdown hr{
+  padding:0px;
+  margin:5px;
+}
+ul.f-dropdown a{
+  padding:0px;
+  margin:5px;
 }
